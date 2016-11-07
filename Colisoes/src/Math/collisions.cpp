@@ -66,45 +66,45 @@ int AABBInnerCollisionCheck(const BoundingBox *box, const BoundingBox *other){
 	return 0; 
 }
 
-int circleCollisionCheck(const BoundingCircle *c1, const BoundingCircle *c2) {
+int circleCollisionCheck(const BoundingCircle *circle, const BoundingCircle *other) {
 	Point distV;
-	distV.x = c1->x - c2->x;
-	distV.y = c1->y - c2->y;
+	distV.x = circle->x - other->x;
+	distV.y = circle->y - other->y;
 
 	auto distSqr = distV.x * distV.x + distV.y * distV.y;
-	auto sumRadius = (c1->radius * c1->radius + 2 * c1->radius * c2->radius + c2->radius * c2->radius);
+	auto sumRadius = (circle->radius * circle->radius + 2 * circle->radius * other->radius + other->radius * other->radius);
 	return distSqr < sumRadius;
 }
 
-int circleBoxCollisionCheck(const BoundingBox *b, const BoundingCircle *c) {
-	Point p;
+int circleBoxCollisionCheck(const BoundingBox *box, const BoundingCircle *circle) {
+	Point result;
 	float boxLeft, boxRight, boxTop, boxBottom;
 
-	boxLeft = b->x;
-	boxRight = b->x + b->width; 
-	boxTop = b->y;
-	boxBottom = b->y + b->height;
+	boxLeft = box->x;
+	boxRight = box->x + box->width; 
+	boxTop = box->y;
+	boxBottom = box->y + box->height;
 
-	if(c->x < boxLeft)
-		p.x = boxLeft;
-	else if(c->x > boxRight)
-		p.x = boxRight;
+	if(circle->x < boxLeft)
+		result.x = boxLeft;
+	else if(circle->x > boxRight)
+		result.x = boxRight;
 	else
-		p.x = c->x;
+		result.x = circle->x;
 
-	if(c->y < boxTop)
-		p.y = boxTop;
-	else if(c->y > boxBottom)
-		p.y = boxBottom;
+	if(circle->y < boxTop)
+		result.y = boxTop;
+	else if(circle->y > boxBottom)
+		result.y = boxBottom;
 	else
-		p.y = c->y;
+		result.y = circle->y;
 
 	Point distV;
-	distV.x = p.x - c->x;
-	distV.y = p.y - c->y;
+	distV.x = result.x - circle->x;
+	distV.y = result.y - circle->y;
 	auto distSqr = distV.x * distV.x + distV.y * distV.y; 
 
-	return distSqr < c->radius * c->radius;
+	return distSqr < circle->radius * circle->radius;
 }
 
 int AABBOffsetCollisionCheck(const BoundingBox *box, const BoundingBox *other) {
