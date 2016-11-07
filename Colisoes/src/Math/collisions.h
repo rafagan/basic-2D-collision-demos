@@ -22,7 +22,7 @@ struct BoundingBox {
 
 //Implementação alternativa
 // struct BoundingBox { 
-// 	int left, right, top, bottom;
+// 	float left, right, top, bottom;
 // };
 
 struct Point { 
