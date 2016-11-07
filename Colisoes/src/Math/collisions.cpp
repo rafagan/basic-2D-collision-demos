@@ -1,3 +1,16 @@
+/******************************************************************************
+*
+* COPYRIGHT Ráfagan S. de Abreu. ALL RIGHTS RESERVED.
+*
+* This software can be copied, stored and distributed without
+* author's prior authorization. Just let him know and leave this header in this source code.
+*
+* This file was made available on https://github.com/rafagan/basic-2D-collision-demos/ and it is free
+* to be restributed or used under Apache 2.0 license:
+* http://www.apache.org/licenses/
+*
+******************************************************************************/
+
 #include "collisions.h"
 
 int pointBoxCollisionCheck(const Point *point, const BoundingBox *box) {
