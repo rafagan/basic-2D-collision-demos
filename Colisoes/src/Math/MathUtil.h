@@ -27,10 +27,10 @@
 
 namespace math
 {
-    static const double MATH_PI = 3.14159265358979323846;
+	static const double MATH_PI = 3.14159265358979323846;
 	static const double MATH_PI_OVER_TWO = MATH_PI / 2.0;
-    static const double ONE_DEGREE = 180.0 / MATH_PI;
-    static const double E = 2.7182818284590452354;
+	static const double ONE_DEGREE = 180.0 / MATH_PI;
+	static const double E = 2.7182818284590452354;
 	static const float FLOAT_DELTA = 0.00001f;
 	static const float DOUBLE_DELTA =  0.00000000000001f;
 
