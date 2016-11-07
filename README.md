@@ -13,7 +13,7 @@ BoundingCircle VS BoundingCircle:
 
 ![BoundingCircle VS BoundingCircle](http://bbsimg.ngfiles.com/2/23832000/ngbbs4f66287eb94a8.jpg)
 
-Made with OpenFrameworks and wrote in C/C++.
+Made with OpenFrameworks and wrote in C/C++ in Visual Studio 2015.
 The collision algorithms were intentionally built with pure C code.
 
 You can also see the implementation using collision with more C++ code here:
