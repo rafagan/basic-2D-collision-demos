@@ -17,6 +17,6 @@ Made with OpenFrameworks and wrote in C/C++ in Visual Studio 2015.
 The collision algorithms were intentionally built with pure C code.
 
 You can also see the implementation using collision with more C++ code here:
-....................................................
+https://github.com/rafagan/basic-2D-collision-demos-plus-plus
 
 Licensed over Apache 2. Please let me know if you liked.
