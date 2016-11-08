@@ -34,7 +34,7 @@ void Exemplo4::update(){
 			b1.y = mouse.y;
 
 			//TODO: Fazer o teste com os outros algoritmos de bounding box implementados
-			colors[0] = AABBOffsetCollisionCheck(&b1, &b2) ? color3 : color2;
+			colors[0] = AABBInnerCollisionCheck(&b1, &b2) ? color3 : color2;
 			break;
 		case 2:
 			c1.x = mouse.x;

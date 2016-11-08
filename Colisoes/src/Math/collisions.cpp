@@ -16,8 +16,8 @@
 int pointBoxCollisionCheck(const Point *point, const BoundingBox *box) {
 	int left = point->x >= box->x;
 	int right = point->x <= (box->x + box->width);
-	int top = point->y >= box->y;
-	int bottom = point->y <= (box->y + box->height);
+	int bottom = point->y >= box->y;
+	int top = point->y <= (box->y + box->height);
 
 	return (left && right && top && bottom);
 }
@@ -26,22 +26,22 @@ int AABBCollisionCheck(const BoundingBox *box, const BoundingBox *other){
 	float boxLeft, boxRight, boxTop, boxBottom;
 	boxLeft = box->x;
 	boxRight = box->x + box->width; 
-	boxTop = box->y;
-	boxBottom = box->y + box->height;
+	boxBottom = box->y;
+	boxTop = box->y + box->height;
 
 	float otherLeft, otherRight, otherTop, otherBottom;
 	otherLeft = other->x;
 	otherRight = other->x + other->width; 
-	otherTop = other->y;
-	otherBottom = other->y + other->height;
+	otherBottom = other->y;
+	otherTop = other->y + other->height;
 
 	if(boxLeft > otherRight)
 		return 0;
 	if(boxRight < otherLeft)
 		return 0;
-	if(boxTop > otherBottom)
+	if (boxBottom > otherTop)
 		return 0;
-	if(boxBottom < otherTop)
+	if(boxTop < otherBottom)
 		return 0;
 
 	return 1; 
@@ -51,17 +51,17 @@ int AABBInnerCollisionCheck(const BoundingBox *box, const BoundingBox *other){
 	float boxLeft, boxRight, boxTop, boxBottom;
 	boxLeft = box->x;
 	boxRight = box->x + box->width;
-	boxTop = box->y;
-	boxBottom = box->y + box->height;
+	boxBottom = box->y;
+	boxTop = box->y + box->height;
 
 	float otherLeft, otherRight, otherTop, otherBottom;
 	otherLeft = other->x;
 	otherRight = other->x + other->width; 
-	otherTop = other->y;
-	otherBottom = other->y + other->height;
+	otherBottom = other->y;
+	otherTop = other->y + other->height;
 
 	if(boxRight > otherLeft && boxLeft < otherRight)
-		if(boxTop < otherBottom && boxBottom > otherTop)
+		if(boxTop > otherBottom && boxBottom < otherTop)
 			return 1;
 	return 0; 
 }
@@ -82,8 +82,8 @@ int circleBoxCollisionCheck(const BoundingBox *box, const BoundingCircle *circle
 
 	boxLeft = box->x;
 	boxRight = box->x + box->width; 
-	boxTop = box->y;
-	boxBottom = box->y + box->height;
+	boxBottom = box->y;
+	boxTop = box->y + box->height;
 
 	if(circle->x < boxLeft)
 		result.x = boxLeft;
@@ -92,9 +92,9 @@ int circleBoxCollisionCheck(const BoundingBox *box, const BoundingCircle *circle
 	else
 		result.x = circle->x;
 
-	if(circle->y < boxTop)
+	if(circle->y > boxTop)
 		result.y = boxTop;
-	else if(circle->y > boxBottom)
+	else if(circle->y < boxBottom)
 		result.y = boxBottom;
 	else
 		result.y = circle->y;
