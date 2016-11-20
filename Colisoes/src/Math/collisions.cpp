@@ -7,7 +7,7 @@
 *
 * This file was made available on https://github.com/rafagan/basic-2D-collision-demos/ and it is free
 * to be restributed or used under Apache 2.0 license:
-* http://www.apache.org/licenses/
+* http://www.apache.org/licenses/LICENSE-2.0/
 *
 ******************************************************************************/
 
