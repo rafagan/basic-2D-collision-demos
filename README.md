@@ -19,4 +19,8 @@ The collision algorithms were intentionally built with pure C code.
 You can also see the implementation using collision with more C++ code here:
 https://github.com/rafagan/basic-2D-collision-demos-plus-plus
 
+Both sources works considering that the Y axis points in the default direction from math:
+
+![Y axis in its default direction](https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Coordinate_with_Origin.svg/220px-Coordinate_with_Origin.svg.png).
+
 Licensed over Apache 2. Please let me know if you liked.
